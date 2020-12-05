@@ -57,3 +57,18 @@
 #add:
 				if app.ENABLE_SEND_TARGET_INFO_EXTENDED:
 					myItem.SetRarity(rarity)
+
+#search:
+						for curItem in MONSTER_INFO_DATA[race]["items"]:
+							if curItem.has_key("vnum_list"):
+								height += self.AppendItem(itemListBox, curItem["vnum_list"], curItem["count"])
+							else:
+								height += self.AppendItem(itemListBox, curItem["vnum"], curItem["count"])
+
+#replace:
+						for curItem in MONSTER_INFO_DATA[race]["items"]:
+							if curItem.has_key("vnum_list"):
+								height += self.AppendItem(itemListBox, curItem["vnum_list"], curItem["count"], curItem["rarity"])
+							else:
+								height += self.AppendItem(itemListBox, curItem["vnum"], curItem["count"], curItem["rarity"])
+
